@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/Artifact-Icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/Artifact-Icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/Artifact-Icons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CW FARM SIMULATOR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <style>
+      #artifactDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Icons stick lower */
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.artifact-text {
+  flex: 1;
+  text-align: left;
+}
+
+.artifact-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.artifact-icons img {
+  width: 40px;
+  height: auto;
+}
+      #setIcon {
+  width: 100px;
+  height: auto;
+}
+
+#typeIcon {
+  width: 100px;
+  height: auto;
+}
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 20px auto 0 auto;
+      }
+      .navbar-icon {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+      button {
+        margin-top: 10px;
+      }
+      .response-box {
+  width: 400px;            
+  height: 330px;            
+  overflow: auto;             
+  margin: 10px auto;
+  padding: 20px 30px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-side, .right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
+  height: 100%;
+}
+
+  .type-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+  }
+
+  .type-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .right-side {
+    text-align: left;
+  }
+  .rounded-img {
+    width: 40%;
+    border-radius: 50%;
+  }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container"> 
+        <a class="navbar-brand p-0" href="#">
+          <img src="Images/Artifact-Icons/CW set icon.webp" alt="CW icon" width="50" class="navbar-icon">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="About Author.html">About Author</a>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+        <div class="col">
+          <p>        Hi there! It's an artifact farming simulator, where you can experience
+            wonders of farming set of Crimson Witch Of Flames for Diluc. The odds are
+            taken precisely from the game. Enjoy!
+          </p>
+        </div>
+        <div class="col d-flex flex-column align-items-center">
+            <img class="rounded-img" src="Images/Artifact-Icons/Diluc with Axe.jpg" alt="Diluc" />
+            <div class="d-flex justify-content-center">
+              <button onclick="rollArtifact()" class="btn btn-primary">GAMBLE!</button>
+            </div>
+                <div id="response-box" class="response-box">
+                  <div id="artifactDetails">
+                        <div class="artifact-text">
+                          <h5 id="setName">Set Name</h5>
+                          <p id="artifactType">Artifact Type</p>
+                          <p id="mainStat">Main Stat</p>
+                        </div>  
+                        <div class="artifact-icons">
+                        <img id="setIcon" src="Images/Artifact-Icons/CW set icon.webp" alt="Set Icon">
+                      </div>
+                  </div>
+                  <div id="artifactDetails">                    <ul id="minorAffixes"></ul> <!-- this is where minor stats show up -->
+                    <script src="GambleCode.js"></script>
+                  <div class="artifact-icons">
+                    <img id="typeIcon" src="Images/Artifact-Icons/CW set icon.webp" alt="Type Icon">
+        </div>
+        </div>        
+        </div>
+                
+        </div>
+        <div class="col">
+          <p>Saved artifacts:
+            
+          </p>
+        </div> 
+      </div>
+    </div>
+  </body>
+</html>
